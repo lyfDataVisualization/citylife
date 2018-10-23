@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../one/index.css">
+    <link rel="stylesheet" type="text/css" href="../one/css/swiper.css">
+    
+    <!-- Bootstrap -->
+    <!--link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/index.css" rel="stylesheet"-->
+	<link href="../js/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/custom/init.js"></script>
+</head>
+<body>
+  <div class="_body">
+      <img src="../one/image/top.png" class="t_1" alt="">
+      <div class="_center">
+         <div class="_left">
+             <div class="swiper-container _ls">
+                 <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                         <div><img src="../one/image/day.png" alt=""></div>
+                         <div><img src="../one/image/day3.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day5.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day6.png" class="_d3" alt=""></div>
+                     </div>
+                     <div class="swiper-slide">
+                         <div class="trunb">第二部分</div>
+                         <div><img src="../one/image/day3.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day5.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day6.png" class="_d3" alt=""></div>
+                     </div>
+                     <div class="swiper-slide">
+                         <div class="trunb">第二33部分</div>
+                         <div><img src="../one/image/day3.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day5.png" class="_d3" alt=""></div>
+                         <div><img src="../one/image/day6.png" class="_d3" alt=""></div>
+                     </div>
+                     
+                 </div>
+                 <div class="swiper-pagination"></div>
+             </div>
+         </div>
+          <div class="_right">
+          <div style="position: absolute;top: 40px;left: 0px;z-index: 50;">
+            <!-- <img src="image/rk.png" class="rks rk_show" id="rk" alt="">-->
+             <div  id="rk" class="bgrk">
+                 <div class="_t_f"><span class="line"></span>人口态势</div>
+                 <div class="_one">首都核心功能区</div>
+                 <div class="_two">(东城区,西城区)</div>
+                 <div class="_two2">常驻人口</div>
+                 <div><span class="_two3">213.4</span>万人</div>
+                 <div class="_two2">外来人口</div>
+                 <div class="_two5"><span class="_two3">48.4</span>万人</div>
+                 <div class="_two6">人口自然增长率</div>
+                 <div class="_two7"><span class="_two3">1.12</span>%</div>
+                 <div class="_two8">数据由北京市统计局提供更新日期2018-10-01</div>
+             </div>
+             <div id="dc" class="bgrk none">
+                 <div class="_t_f"><span class="line"></span>共享单车态势</div>
+                 <div class="_one">全市共享单车总数</div>
+                 <div><span class="_two3">193.7</span>万量</div>
+                 <div class="_two2">膜拜</div>
+                 <div class="_two5"><span class="_two3">41.8</span>万辆</div>
+                 <div class="_two6">OFO</div>
+                 <div class="_two7"><span class="_two3">72.3</span>万辆</div>
+                 <div class="_two6">小蓝单车</div>
+                 <div class="_two7"><span class="_two3">32.3</span>万辆</div>
+                 <div class="_two6">其他单车</div>
+                 <div class="_two7"><span class="_two3">10.3</span>万辆</div>
+                 <div class="_two8">数据由北京市统计局提供更新日期2018-10-01</div>
+             </div>
+             <div id="qy" class="bgrk none">
+                 <div class="_t_f"><span class="line"></span>企业态势</div>
+                 <div class="_one">地区生产总值(GDP)</div>
+                 <div><span class="_two3">21443.4</span>亿元</div>
+                 <div class="_two2">生产性服务业增加值</div>
+                 <div class="_two5"><span class="_two3">41223.7</span>亿元</div>
+                 <div class="_two6">文化创业产业增加值</div>
+                 <div class="_two7"><span class="_two3">23409.3</span>亿元</div>
+                 <div class="_two6">高技术产业增加值</div>
+                 <div class="_two7"><span class="_two3">5127.3</span>亿元</div>
+                 <div class="_two8">数据由北京市统计局提供更新日期2018-10-01</div>
+             </div>
+         </div>
+          	  <div class="middlepanel_0" id="cesiumContainer"></div>
+              <img src="../one/image/r_2.png" class="r1icon" alt="" style="position: absolute;top: 0px;left: 0px;">
+              <img src="../one/image/right1.png" class="rig_1" alt="">
+              <!--div style="position: absolute;top: 40px;left: 0px;display:none">
+                  <img src="../one/image/rk.png" class="rks rk_show" id="rk" alt="">
+                  <img src="../one/image/dc.png" class="rks dc_none" id="dc" alt="">
+                  <img src="../one/image/qy.png" class="rks qy_none" id="qy" alt="">
+              </div-->
+              <!--北京态势模态框显示-->
+              <div class="pos_rel none" id="showM">
+                  <div class="_t_f"><span class="line"></span>北京态势</div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col">人</div>
+                          <div class="_t_col">法人</div>
+                          <div class="_t_col">物</div>
+                      </div>
+                  </div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col _border ttt"  onclick="loadData(0)">
+                              <img src="../one/image/4g.png" class="tC" alt="" >
+                              <!--span class="turnRed">动态人口分布</span-->
+                              <span id="renkou">动态人口分布</span>
+                          </div>
+                          <div class="_t_col _border ttt" onclick="loadData(1)">
+                          	<img src="../one/image/4g.png" class="tC" alt="" >
+                          	<span id="company">高新技术企业布局</span>
+                          </div>
+                          <!--div class="_t_col"><img src="../one/image/4g.png" class="tC" onclick="gshare()" alt="">共享单车分布</div-->
+                          <div class="_t_col ttt" onclick="loadData(2)">
+                          	<img src="../one/image/4g.png" class="tC"  alt="">
+                          	<span id="sharebikes">共享单车分布</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>人口聚集态势</span></div>
+                          <!--div class="_t_col _border"><img src="../one/image/4g.png" class="tC" alt=""><span>服务业务布局</span></div-->
+                          <div class="_t_col _border ttt">
+                          	<img src="../one/image/4g.png" class="tC" alt="" >
+                          	<span>服务业务布局&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                          </div>
+                          <div class="_t_col ttt" onclick="loadData(3)">
+                          	<img src="../one/image/4g.png" class="tC" alt=""  >
+                          	<span id="gongwuche">公务用车监控</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>人口通勤态势</span></div>
+                          <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>金融业务布局&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></div>
+                          <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>空气质量检测</span></div>
+                      </div>
+                  </div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>北京职住态势</span></div>
+                          <div class="_t_col _border ttt"></div>
+                          <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>智能垃圾桶&nbsp&nbsp&nbsp&nbsp</span></div>
+                      </div>
+                  </div>
+                  <div class="_table _font">
+                      <div class="_t_row">
+                          <div class="_t_col _border"></div>
+                          <div class="_t_col _border"></div>
+                          <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>城市积水态势</span></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="line_right" style="position: absolute;right: 0px;top: 600px;">
+                  <img src="../one/image/bt1.png" onclick="goShow()" class="_icon1 _jh" alt="">
+                  <img src="../one/image/d3.png" class="_icon1" alt="">
+                  <!--img src="../one/image/d4.png" onclick="goPage()" class="_icon1 _jh" alt=""-->
+                  <a href="one.html" target="_blank" ><img src="../one/image/d4.png" class="_icon1 _jh" alt=""></a>
+                  <img src="../one/image/d6.png" class="_icon1" alt="">
+              </div> 
+              <div>
+                   <div class="bottom_s" id="rk1">
+	                       <div>
+	                           <img src="../one/image/rktst.png" class="small_r" alt="">
+	                       </div>
+	                      <div>
+	                          <img src="../one/image/sfs.png" alt="">
+	                      </div>
+						  <div>
+	                          <img src="../one/image/timeline.png" class="small_r_1" alt="">
+	                      </div>
+                   </div>
+                   <div class="bottom_s none" id="gxdc">
+	                     <div><img src="../one/image/gs.png" class="small_r" alt=""></div>
+	                      <div><img src="../one/image/ss.png" alt=""></div>
+	                      <div>
+	                          <img src="../one/image/timeline.png" class="small_r_1" alt="">
+	                      </div>
+                   </div>
+                   <div class="bottom_s none" id="gxjs">
+                       <img src="../one/image/ss4.png" alt="">
+                       <div>
+                          <img src="../one/image/timeline.png" class="small_r_1" alt="">
+                      </div>
+                   </div>
+               </div>
+          </div>
+      </div>
+  </div>
+  <!-- Swiper JS -->
+  <script src="../one/js/swiper.min.js"></script>
+  <script src="../one/js/jquery-1.8.3.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <!--script src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script-->
+    <script src="../js/Cesium/Cesium.js"></script>
+    <script src=../js/cesiumgeometry/CesiumGeometry.js></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=WlL6G3hCucMtMAp3ub84dydFaB3BMT41"></script>
+    <script src="../js/echarts/4.2.0-rc.2/echarts.min.js"></script>
+    <script src="../js/echarts/4.2.0-rc.2/extension/bmap.min.js"></script>
+    <script src="../js/custom/init.js"></script>
+    <script src="../data/data.js"></script>
+    <script src="../js/custom/assistpanel/assistpanel.js"></script>
+    <script src="../js/custom/things/sharebikes.js"></script>
+    <script src="../js/custom/things/gongwuche.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+  var viewer;
+  initMap();
+  
+      /*var swiper = new Swiper('.swiper-container', {
+          direction: 'vertical',
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+      });
+      */
+      var swiper = new Swiper('.swiper-container', {
+          direction: 'vertical',
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+          autoplay:true,
+          speed: 2000,
+          observer:true,
+          observeParents:true,
+          loop:true
+      });
+     function goShow(){
+         var target=document.getElementById('showM');
+         if (target.style.display=="block"){
+             target.style.display="none";
+         } else {
+             target.style.display="block";
+         }
+     }
+     function goPage(){
+         window.location.href='one.html';
+     }
+     function gshare(){
+         //共享单车 rk  dc qy
+         var dc=document.getElementById('dc');
+         var rk=document.getElementById('rk');
+         var qy=document.getElementById('qy');
+         if (dc.style.display=="block"){
+             dc.style.display="none";
+         } else {
+             dc.style.display="block";
+             rk.style.display="none";
+             qy.style.display="none";
+         }
+     }
+  </script>
+</body>
+</html>

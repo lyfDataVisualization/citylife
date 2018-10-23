@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../one/one.css">
+    <link rel="stylesheet" href="../one/css/swiper.css">
+    
+    <link href="../js/Cesium/Widgets/widgets.css" rel="stylesheet">
+    
+    <script src="../one/js/custom/init_one.js"></script>
+</head>
+<body>
+  <div class="main">
+      <img src="../one/image/top.png" class="t_1" alt="">
+      <div class="center">
+          <div class="center_top">
+              <div class="c_flex_1">
+                  <img src="../one/image/left_1.png" class="img_w" alt="">
+                  <img src="../one/image/jt.png" class="jt" alt="">
+              </div>
+              <div class="c_flex_2">
+              	  <div class="img_w2" id="cesiumContainer"></div>
+                  <!-- img src="../one/image/left_2.png" class="img_w2" alt="">
+                  <img src="../one/image/start.png" class="start" alt="">
+                  <img src="../one/image/start.png" class="start2" alt="">
+                  <img src="../one/image/start5.png" class="start5" alt=""-->
+                  <div class="ws">
+                      <img src="../one/image/start.png" class="start6" alt="">
+                      <span class="f_s">今日凌晨 05:35分 昌平G8出京方向发生危化品运输车侧翻事故…</span>
+                  </div>
+              </div>
+              <div class="c_flex_3">
+                  <div class="center_top">
+                      <img src="../one/image/right_4.png" class="r_1 _left" alt="">
+                      <img src="../one/image/right_4.png" class="r_1" alt="">
+                  </div>
+                  <div >
+                      <img  class="r_2" src="../one/image/right_4.png" alt="">
+                  </div>
+              </div>
+              <div class="c_flex_4"><img src="../one/image/right_6.png" class="img_6" alt=""></div>
+          </div>
+      </div>
+      <!-- Swiper -->
+      
+	<div class="swiper-container sjk">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam1.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam2.png" alt=""></div>
+              <div style="width:313px"  class="swiper-slide"><img  class="img_7"  src="../one/image/xiam3.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam4.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam5.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam6.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam7.png" alt=""></div>
+              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam8.png" alt=""></div>
+
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+      </div>
+      <!-- Swiper JS -->
+      <script src="../one/js/swiper.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <!-- script>
+      		
+          var swiper = new Swiper('.swiper-container', {
+              slidesPerView: 6,
+              spaceBetween: 30,
+              pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+              },
+          });
+          initPage();
+      </script-->
+  </div>
+	<script src="../js/Cesium/Cesium.js"></script>
+    <script src=../js/cesiumgeometry/CesiumGeometry.js></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=WlL6G3hCucMtMAp3ub84dydFaB3BMT41"></script>
+    <script src="../js/echarts/4.2.0-rc.2/echarts.min.js"></script>
+    <script src="../js/echarts/4.2.0-rc.2/extension/bmap.min.js"></script>
+    <script src="../js/custom/init.js"></script>
+    <script src="../data/data.js"></script>
+    <script src="../js/custom/assistpanel/assistpanel.js"></script>
+    <script src="../js/custom/things/sharebikes.js"></script>
+    <script src="../js/custom/things/gongwuche.js"></script>
+<script>
+      		
+          var swiper = new Swiper('.swiper-container', {
+        	  slidesPerView: 6,
+              spaceBetween: 350,
+              pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+              },
+          });
+          initPage();
+      </script>
+</body>
+</html>
