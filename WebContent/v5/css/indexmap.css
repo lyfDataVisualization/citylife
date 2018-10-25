@@ -1,14 +1,21 @@
 @charset "UTF-8";
 .title{
 	    /*width: 50px;*/
-    height: 50px;
+   
+       
+    width: 760px;
     margin: auto;
-    text-align: center;
-    line-height: 50px;
-    color: white;
-    font-size: 32px;
-        position: absolute;
-    left: 50%;
+    /* position: fixed; */
+    /* left: 50%; */
+    /* right: 50%; */
+    height: 84px;
+}
+.title_tab{
+	       /* width: 50px; */
+    /* margin: auto; */
+    position: absolute;
+    margin-top: -50px;
+    /* left: 50%; */
 }
 .leftpanel{
 	    width: 400px;
@@ -129,7 +136,7 @@
 	background: url(../img/rightpanel_2/0031.png) no-repeat center center;
 }
 .headbar{
-	background: url(../img/head/head.png) no-repeat center center;
+	background: url(../img/head/di2.jpg) no-repeat center center;
 }
 .middlepanel0{
     position: absolute;
@@ -144,7 +151,7 @@
     position: absolute;
     left:0px;
     right: 0px;
-    top: 50px;
+    top: 60px;
     bottom: 0px;
     background: #808000;
     
@@ -196,9 +203,9 @@
     z-index: 101;
 }
 .wu_menu{
-	    left: 100px;
-    /* bottom: 100px; */
-    top: -200px;
+	    /* left: 100px;
+    bottom: 100px; 
+    top: -200px;*/
 }
 .dropdown-header_cus{
 	color: white;
@@ -224,36 +231,36 @@
     width: auto;
 }
 #myTab>li{
-	height:120px;
-	width:120px;
+	height:37px;
+	width:150px;
 }
 #myTab>li>a{
-	height:120px;
-	width:120px;
+	height:37px;
+	width:150px;
 }
 #myTab1>a{
-	background: url(../img/righttab/1.png) no-repeat left center;
+	background: url(../img/head/top_3.png) no-repeat left center;
 }
 #myTab1.active>a{
-	background: url(../img/righttab/01.png) no-repeat left center;
+	background: url(../img/head/top_03.png) no-repeat left center;
 }
 #myTab2>a{
-	background: url(../img/righttab/2.png) no-repeat left center;
+	background: url(../img/head/top_5.png) no-repeat left center;
 }
 #myTab2.active>a{
-	background: url(../img/righttab/02.png) no-repeat left center;
+	background: url(../img/head/top_05.png) no-repeat left center;
 }
 #myTab3>a{
-	background: url(../img/righttab/3.png) no-repeat left center;
+	background: url(../img/head/top_7.png) no-repeat left center;
 }
 #myTab3.active>a{
-	background: url(../img/righttab/03.png) no-repeat left center;
+	background: url(../img/head/top_07.png) no-repeat left center;
 }
 #myTab4>a{
-	background: url(../img/righttab/4.png) no-repeat left center;
+	background: url(../img/head/top_9.png) no-repeat left center;
 }
 #myTab4.active>a{
-	background: url(../img/righttab/04.png) no-repeat left center;
+	background: url(../img/head/top_09.png) no-repeat left center;
 }
 #assist_panel
 {
@@ -308,17 +315,35 @@ position: absolute;
 .assist_panel_7{
 	background: url(../img/assistpanel/pc-2_26.png) no-repeat left center;
 }
-.png1{height: 608px;width: 356px;float: left;margin-right: 5px;margin-top: 20px;}
-.png2{width: 672px;
-    height: 611px;
+.png1{    height: 662px;
+    width: 1108px;
     float: left;
-        margin-right: 5px;
-        margin-top: 20px;
-    background: url(../img/page1/8.png) no-repeat left center;}
-.png2_1{    height: 544px;
-    width: 650px;}
-.png3{    float: left;margin-top: 20px;
+    /* margin-right: 5px; */
+    margin-top: 20px;
+    margin-left: 10px;}
+.png2{    width: 780px;
+    height: 662px;
+    /* float: left; */
+    /* margin-right: 15px; */
+    /* margin-left: 100px; */
+    margin-top: 20px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    }
+.png2_1{    height: 662px;
+    width: 780px;}
+.png2_2{
+	    position: absolute;
+    top: 130px;
+    right: 130px;
+}
+.png3{    height: 331px;
+    width: 1920px;
    }
 .png3_1{float: left;    }
 .png3_2{float: left;    }
-.png3_3{float: left;margin-top: 45px;}
+.png3_3{    position: absolute;
+    /* z-index: 1000; */
+    bottom: 0px;
+    left: 50%;}

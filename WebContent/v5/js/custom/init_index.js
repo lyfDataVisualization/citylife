@@ -56,9 +56,10 @@ function LoadData()
 //        new Cesium.Color(25 / 255, 20 / 255, 38 / 255, 1),
 //        new Cesium.Color(221 / 255, 20 / 255, 20 / 255, 1)
     ];
-	var positions = [Cesium.Cartesian3.fromDegrees(116.275577, 40.100275),
-		Cesium.Cartesian3.fromDegrees(116.287055, 39.943273),
-		Cesium.Cartesian3.fromDegrees(116.400817, 39.782038)
+	var materials = ['/citylife/v5/img/page2/m2.png','/citylife/v5/img/page2/m1.png','/citylife/v5/img/page2/m3.png'];
+	var positions = [Cesium.Cartesian3.fromDegrees(116.300943, 39.954704),
+		Cesium.Cartesian3.fromDegrees(116.322335, 39.844385),
+		Cesium.Cartesian3.fromDegrees(116.508470, 39.829314)
 		
 //		Cesium.Cartesian3.fromDegrees(116.825, 40.52),
 //		Cesium.Cartesian3.fromDegrees(117.216, 40.196),
@@ -93,7 +94,8 @@ function LoadData()
 	            semiMajorAxis: 3000.0,
 	            height: 0.0,
 	            material: new Cesium.ElliposidFadeMaterialProperty({
-	                color: colors[i]
+//	                color: colors[i]
+	            	color:new Cesium.Color(255 / 255, 255 / 255, 255 / 255, 1)
 	            }),
 	            //material: colors[i % 3],
 	            //material: new Cesium.ColorMaterialProperty(colors[i % 3])
@@ -106,7 +108,8 @@ function LoadData()
 	            semiMajorAxis: 2000.0,
 	            height: 0.0,
 	            material: new Cesium.ElliposidFadeMaterialProperty({
-	                color: colors[i]
+	                //color: colors[i]
+	            	color:new Cesium.Color(255 / 255, 255 / 255, 255 / 255, 1)
 	            }),
 	            //material: colors[i % 3],
 	            //material: new Cesium.ColorMaterialProperty(colors[i % 3])
@@ -115,12 +118,14 @@ function LoadData()
 		var glowingLine3 = dataSource.entities.add({
 	        position: positions[i],
 	        ellipse: {
-	            semiMinorAxis: 1000.0,
-	            semiMajorAxis: 1000.0,
+	            semiMinorAxis: 1500.0,
+	            semiMajorAxis: 1500.0,
 	            height: 0.0,
-	            material: new Cesium.ElliposidFadeMaterialProperty({
-	                color: colors[i]
-	            }),
+	            material: materials[i]
+//	            material: new Cesium.ElliposidFadeMaterialProperty({
+////	                color: colors[i]
+//	            	color:new Cesium.Color(255 / 255, 255 / 255, 255 / 255, 1)
+//	            }),
 	            //material: colors[i % 3],
 	            //material: new Cesium.ColorMaterialProperty(colors[i % 3])
 	        }

@@ -111,7 +111,7 @@ function loadData(index){
 	            //Some states have multiple entities, so we store the color in a
 	            //hash so that we use the same color for the entire state.
 	            var entity = entities[i];
-	            console.log(entity);
+//	            console.log(entity);
 	            var Home = entity.properties.home;
 	            //var color = Cesium.Color.fromHsl((1 - (entity.properties.home * 0.005)), 1.0, 0.5);
 	            //Set the polygon material to our random color.

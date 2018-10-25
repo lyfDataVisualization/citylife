@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>index</title>
+
+    <!-- Bootstrap -->
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/index.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../one/index.css">
+	<link rel="stylesheet" href="../one/css/swiper.css">
+	<link href="../js/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/custom/init.js"></script>
+  </head>
+  <body>
+  
+  	<nav class="navbar navbar-inverse navbar-fixed-top headbar" style="height:45px;background-color: #000;">
+      <div class="container-fluid">
+        <!-- div class="navbar-header" style="positon:absolute;left:50%;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <div class="title">
+          	今日北京
+          </div>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <div>
+          	<ul class="nav navbar-nav">
+	            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>今日值班：</a></li>
+	            <li class="active"><a href="#">王某某</a></li>
+         	 </ul>
+          </div>
+          
+          <div>
+          	<ul class="nav navbar-nav navbar-right">
+	            <li class="active" onclick="show_assistPanle()"><a href="#"><span class="glyphicon  glyphicon-signal"></span></a></li>
+	            
+         	 </ul>
+          </div>
+        </div-->
+      </div>
+    </nav>
+    
+    <!--div class="container-fluid" style="margin-top:50px;">
+	  <div class="row">
+	    <div class="col-md-2 col-lg-2">.col-md-2</div>
+	    <div class="col-md-8 col-lg-8" style="min-height:1080px;">
+	    	.col-md-8
+	    </div>
+  		<div class="col-md-2 col-lg-2">.col-md-2</div>
+	  </div>
+	</div-->
+<div id="main_panel" class="tab-content">
+<!--北京态势模态框显示-->
+    <div class="pos_rel none" id="showM">
+        <div class="_t_f">
+        <span class="line"></span>京城态势<span onclick="closeLayersPanel()" class="glyphicon glyphicon-remove closeLayersPanelButton"></span></div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col">人</div>
+                <div class="_t_col">法人</div>
+                <div class="_t_col">物</div>
+            </div>
+        </div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col _border ttt"  onclick="loadData(0)">
+                    <img src="../one/image/4g.png" class="tC" alt="" >
+                    <!--span class="turnRed">动态人口分布</span-->
+                    <span id="renkou">动态人口分布</span>
+                </div>
+                <div class="_t_col _border ttt" onclick="loadData(1)">
+                	<img src="../one/image/4g.png" class="tC" alt="" >
+                	<span id="company">高新技术企业布局</span>
+                </div>
+                <!--div class="_t_col"><img src="../one/image/4g.png" class="tC" onclick="gshare()" alt="">共享单车分布</div-->
+                <div class="_t_col ttt" onclick="loadData(2)">
+                	<img src="../one/image/4g.png" class="tC"  alt="">
+                	<span id="sharebikes">共享单车分布</span>
+                </div>
+            </div>
+        </div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>人口聚集态势</span></div>
+                <!--div class="_t_col _border"><img src="../one/image/4g.png" class="tC" alt=""><span>服务业务布局</span></div-->
+                <div class="_t_col _border ttt">
+                	<img src="../one/image/4g.png" class="tC" alt="" >
+                	<span>服务业务布局&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                </div>
+                <div class="_t_col ttt" onclick="loadData(3)">
+                	<img src="../one/image/4g.png" class="tC" alt=""  >
+                	<span id="gongwuche">公务用车监控</span>
+                </div>
+            </div>
+        </div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>人口通勤态势</span></div>
+                <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>金融业务布局&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></div>
+                <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>空气质量检测</span></div>
+            </div>
+        </div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col _border ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>北京职住态势</span></div>
+                <div class="_t_col _border ttt"></div>
+                <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>智能垃圾桶&nbsp&nbsp&nbsp&nbsp</span></div>
+            </div>
+        </div>
+        <div class="_table _font">
+            <div class="_t_row">
+                <div class="_t_col _border"></div>
+                <div class="_t_col _border"></div>
+                <div class="_t_col ttt"><img src="../one/image/4g.png" class="tC" alt=""><span>城市积水态势</span></div>
+            </div>
+        </div>
+    </div>
+	<div class="middlepanel0 tab-pane fade in active" id="panel0">
+		<div class="container-fluid" style="height:100%;">
+			<div class="row" style="">
+				<div class="png1" style="">
+					<img src="../img/page1/1.png" class="" alt="">
+				</div>
+				<div class="png2" style="">
+					<div class="png2_1" id="cesiumContainer_page1" style="">
+						<!--img src="../img/page1/2.png" class="" alt=""-->
+					</div>
+					<div class="png2_2" style="">
+						<img src="../img/page1/6.png" class="" alt="">
+						<img src="../img/page1/7.png" class="" alt="">
+					</div>
+				</div>
+				
+				<div class="png3" style="">
+					<div class="row" style="">
+						<div class="png3_1" style="">
+							<img src="../img/page1/3.png" class="" alt="">
+						</div>
+						<div class="png3_2" style="">
+							<img src="../img/page1/4.png" class="" alt="">
+						</div>
+					</div>
+					<div class="row" style="">
+						<div class="png3_3" style="">
+							<img src="../img/page1/5.png" class="" alt="">
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="swiper-container sjk" style="margin-top: 30px;">
+		          <div class="swiper-wrapper">
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam11.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam21.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7"  src="../one/image/xiam3.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam4.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam5.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam6.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam7.png" alt=""></div>
+		              <div class="swiper-slide"><img  class="img_7" src="../one/image/xiam8.png" alt=""></div>
+		
+		          </div>
+		          <!-- Add Pagination -->
+		          <div class="swiper-pagination"></div>
+		      </div>
+      <!-- Swiper JS -->
+      <script src="../one/js/swiper.min.js"></script>
+			</div>
+		</div>
+	</div>
+	<div class="middlepanel tab-pane fade" id="panel1">
+		<div class="middlepanel_0" id="cesiumContainer"></div>
+		<div class="middlepanel_1" id="middlepanel_1">
+			<div class="" id="middlepanel_1_0">
+				<img src="../img/page2/p0.png" class="" alt="">
+			</div>
+			<div class="" id="middlepanel_1_1">
+				<img src="" class="" alt="">
+			</div>
+			
+		</div>
+		
+		<div>
+            <div class="bottom_s none" id="person_legend">
+                 <div>
+                     <img src="../one/image/rktst.png" class="small_r" alt="">
+                 </div>
+                <div>
+                    <img src="../one/image/sfs.png" alt="">
+                </div>
+ 				<div>
+                    <img src="../one/image/timeline.png" class="small_r_1" alt="">
+                </div>
+            </div>
+            <div class="bottom_s none" id="company_legend">
+                <div><img src="../one/image/ss.png" alt=""></div>
+                <div>
+                    <img src="../one/image/timeline.png" class="small_r_1" alt="">
+                </div>
+            </div>
+            <div class="bottom_s none" id="sharebikes_legend">
+            	<div><img src="../one/image/gs.png" class="small_r" alt=""></div>
+                <img src="../one/image/ss4.png" alt="">
+                <div>
+                   <img src="../one/image/timeline.png" class="small_r_1" alt="">
+               </div>
+            </div>
+            <div class="bottom_s none" id="gongwuche_legend">
+                <img src="../one/image/ss4.png" alt="">
+                <div>
+                   <img src="../one/image/timeline.png" class="small_r_1" alt="">
+               </div>
+            </div>
+        </div>
+		<!-- div class="middlepanel_3">
+		</div-->
+	</div>
+	
+	<div class="rightpanel">
+		<div class="container-fluid" style="padding-left:0px;">
+			<ul id="myTab" class="nav nav-pills nav-stacked">
+				<li class="active" id="myTab1" value="0"><a href="#panel0" data-toggle="pill" ></a></li>
+				<li onclick="showLayersPanel();" id="myTab2" value="1"><a href="#panel1"  id="myTab2_a" data-toggle="pill" ></a></li>
+				<li id="myTab3" value="2"><a href="#panel2" data-toggle="pill" ></a></li>
+				<li id="myTab4" value="3"><a href="#panel3" data-toggle="pill" ></a></li>
+			</ul>
+			
+		</div>
+	</div>
+</div>
+<div id="assist_panel">
+	<div class="container-fluid" style="height:100%">
+		<div class="row" style="height:50%">
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_0 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row" style="height:30%">
+						<div class="col-md-4 col-lg-4" style="height:100%;" id="assist_panel_0_0">
+							<div class="assist_panel_0_0_0">环境事故</div>
+							<div class="assist_panel_0_0_1" style="color: white;text-align: center;"><h2>21起</h2></div>
+							<div class="assist_panel_0_0_2"></div>
+						</div>
+						<div class="col-md-8 col-lg-8" style="height:100%;" id="assist_panel_0_1">
+						</div>
+					</div>
+					<div class="row" style="height:40%">
+						<div class="col-md-4 col-lg-4" style="height:100%;" id="assist_panel_0_2">
+							<div class="assist_panel_0_0_0 assist_panel_0_2_0">空气质量</div>
+							<div class="assist_panel_0_0_1 assist_panel_0_2_1" style="width:200px;height:160px;" id="assist_panel_0_2_1"></div>
+							<div class="assist_panel_0_0_2 assist_panel_0_2_2"></div>
+						</div>
+						<div class="col-md-4 col-lg-4" style="height:100%;" id="assist_panel_0_3">
+							<div class="assist_panel_0_0_0 assist_panel_0_3_0">pm2.5浓度</div>
+							<div class="assist_panel_0_0_1 assist_panel_0_3_1" style="width:200px;height:160px;" id="assist_panel_0_3_1"><h2>21起</h2></div>
+							<div class="assist_panel_0_0_2 assist_panel_0_3_2"></div>
+						</div>
+						<div class="col-md-4 col-lg-4" style="height:100%;" id="assist_panel_0_4">
+							<div class="assist_panel_0_0_0 assist_panel_0_0_0 assist_panel_0_4_0">水环境质量</div>
+							<div class="assist_panel_0_0_1 assist_panel_0_4_1" style="width:200px;height:160px;" id="assist_panel_0_4_1"><h2>21起</h2></div>
+							<div class="assist_panel_0_0_2 assist_panel_0_4_2"></div>
+						</div>
+					</div>
+					<div class="row" style="height:30%">
+						<div class="col-md-4 col-lg-4" style="height:100%;" id="assist_panel_0_5">
+							<div class=" assist_panel_0_0_0 assist_panel_0_5_0">垃圾焚烧监测</div>
+							<div class="assist_panel_0_0_1 assist_panel_0_5_1" style="color: white;text-align: center;"><h2>21起</h2></div>
+							<div class="assist_panel_0_0_2 assist_panel_0_5_2"></div>
+						</div>
+						<div class="col-md-8 col-lg-8" style="height:100%;" id="assist_panel_0_6"></div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_1 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_1" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_2 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_2" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_3 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_3" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="row" style="height:50%">
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_4 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_4" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_5 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_5" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_6 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_6" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 assist_panel_rowHeight">
+				<nav class="navbar navbar-default assist_panel_navbar assist_panel_navbar_7 navbar_cus" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+					
+					</div>
+				</nav>
+				<div class="container-fluid" style="height:100%;padding-top: 70px;">
+					<div class="row assist_panel_7" style="height:100%">
+					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../js/jquery/jquery-1.11.2.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/Cesium/Cesium.js"></script>
+    <script src=../js/cesiumgeometry/CesiumGeometry.js></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=WlL6G3hCucMtMAp3ub84dydFaB3BMT41"></script>
+    <script src="../js/echarts/4.2.0-rc.2/echarts.min.js"></script>
+    <script src="../js/echarts/4.2.0-rc.2/extension/bmap.min.js"></script>
+    <script src="../js/custom/init.js"></script>
+    <script src="../one/js/custom/init_one.js"></script>
+    <script src="../data/data.js"></script>
+    <script src="../js/custom/assistpanel/assistpanel.js"></script>
+    <script src="../js/custom/things/sharebikes.js"></script>
+    <script src="../js/custom/things/gongwuche.js"></script>
+    <script>
+    initPage();
+    var viewer;
+    //var viewer;
+    //initMap();
+    var swiper = new Swiper('.swiper-container', {
+  	  slidesPerView: 6,
+        spaceBetween: 285,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+       /* autoplay:true,
+        speed: 2000,
+        observer:true,
+        observeParents:true,
+        loop:true*/
+    });
+    
+    $(function(){
+    	//$('#myTab li:eq(1) a').attr('href','#panel1'); 
+    	//removeAttribute
+    	
+    	//$('#myTab li:eq(1) a').tab('show');
+    	$('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+    		// 获取已激活的标签页的名称
+    		var activeTab = $(e.target).parent().val(); 
+    		//alert(activeTab);
+    		if(activeTab==1)
+    		{
+    			$('#showM').show();
+    			//$('#myTab li:eq(1) a').tab('show');
+    			/*var target=document.getElementById('showM');
+    	         if (target.style.display=="block"){
+    	             target.style.display="none";
+    	         } else {
+    	             target.style.display="block";
+    	         }*/
+    			
+    		}
+    		else{
+    			$('#showM').hide();
+    		}
+    		
+    	});
+    	
+    });
+    initMap();
+    /*
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+    	imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+            url: 'https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer'
+        }),
+
+        //sceneMode : Cesium.SceneMode.SCENE2D,
+        timeline : true,
+        animation : false,
+        shouldAnimate : true
+    });
+   
+    var dataSource = Cesium.GeoJsonDataSource.load('../data/beijingshijie.topojson',{
+    	  stroke: Cesium.Color.HOTPINK,
+	  	  fill: Cesium.Color.TRANSPARENT,
+	  	  stroke:Cesium.Color.DODGERBLUE,
+	  	  strokeWidth: 3
+	  	  
+    });
+    
+    
+    viewer.dataSources.add(dataSource);
+    viewer.flyTo(dataSource);
+    */
+  </script>
+  </body>
+</html>

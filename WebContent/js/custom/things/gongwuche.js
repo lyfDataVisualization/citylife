@@ -76,11 +76,12 @@ function addGongwucheLayer()
 	            polyline: {
 	                positions: childData,
 	                width: 5,
-	                //material: new Cesium.PolylineAttackLinkMaterialProperty({
-	                material: new Cesium.PolylineArrowLinkMaterialProperty({
-	                    //color: new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1)
+	                material: new Cesium.PolylineAttackLinkMaterialProperty({
+	                //material: new Cesium.PolylineArrowLinkMaterialProperty({
+	                    //color: new Cesium.Color(213 / 255, 248/ 255, 255 / 255, 1),
 	                    color: colors[singleRow%6],
-	                    duration:2000
+	                    //duration:2000
+	                    duration:durationTime*50
 	                }),
 //	                material: new Cesium.PolylineDashMaterialProperty({
 //	                    color: colors[i % 3]
