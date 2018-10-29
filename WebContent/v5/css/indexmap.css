@@ -337,6 +337,7 @@ position: absolute;
 	    position: absolute;
     top: 130px;
     right: 130px;
+    display:none;
 }
 .png3{    height: 331px;
     width: 1920px;

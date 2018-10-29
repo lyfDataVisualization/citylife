@@ -41,7 +41,22 @@ function initPage()
 	    destination : Cesium.Cartesian3.fromDegrees(116.413, 39.913,55000.0)
 	});
 	viewer_one._cesiumWidget._creditContainer.style.display = "none";
-	
+	//鼠标点击事件  左键
+    var handler = new Cesium.ScreenSpaceEventHandler(viewer_one.scene.canvas);
+    handler.setInputAction(function(click) {
+       // 处理鼠标按下事件
+       // 获取鼠标当前位置
+        // console.log('1111');
+        var pick = viewer_one.scene.pick(click.position);
+        //选中某模型   pick选中的对象
+        if(pick && pick.id){
+        	//console.log(pick.id);
+        	$('.png2_2').toggle();
+        }
+
+     }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
+
+
 	LoadData();
 }
 function LoadData()
