@@ -168,10 +168,45 @@
     background: #000;
     
 }
+.assist_panel_group0{
+    position: absolute;
+    top: 110px;
+    left: 10px;
+}
+.assist_panel_group1{
+	    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.assist_panel_group2{
+	    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+.bottom_s_panel2 {
+    color: #838681;
+    width: 100%;
+    /*height: 10rem;*/
+    position: absolute;
+    bottom: 0rem;
+    text-align: center;
+}
+.assist_panel_group3{
+	    position: absolute;
+    top: 340px;
+    right: 490px;
+    display:none;
+}
+.assist_panel_group4{
+	    position: absolute;
+    top: 300px;
+    left: 690px;
+    display: none;
+}
 .middlepanel_1{
 	    position: absolute;
-    top: 0px;
-    /* left: 400px; */
+    top: 10px;
+    left: 10px;
     /* display: none; */
     /* position: relative; */
     /*width: 150px;
@@ -267,7 +302,7 @@
 	    z-index: 200;
 	display:none;
 position: absolute;
-    top: 50px;
+    top: 60px;
     bottom: 0px;
     width: 100%;
     background-color: #000;}
@@ -321,6 +356,16 @@ position: absolute;
     /* margin-right: 5px; */
     margin-top: 20px;
     margin-left: 10px;}
+.png1_1{
+	    cursor: pointer;
+    width: 350px;
+    height: 330px;
+    position: absolute;
+    top: 350px;
+    left: 370px;
+    /* bottom: 0px; */
+    background: rgba(0, 0, 0, 0);
+}
 .png2{    width: 780px;
     height: 662px;
     /* float: left; */
@@ -336,12 +381,36 @@ position: absolute;
 .png2_2{
 	    position: absolute;
     top: 130px;
-    right: 130px;
+    left: 130px;
     display:none;
 }
+.panel2_info{
+	position: absolute;
+    top: 130px;
+    left: 130px;
+    display:none;
+}
+.png2_3{
+	    position: absolute;
+    /* top: 0px; */
+    bottom: 10px;
+    left: 10px;
+}
+.png2_4{
+	    position: absolute;
+    top: 50px;
+    left: 20px;
+}
 .png3{    height: 331px;
-    width: 1920px;
+    width: 676px;
+    float:left;
+    margin-right: 12px;
    }
+.png4{    
+ 		float:left;
+ 		margin-top:13px;
+ 		
+}
 .png3_1{float: left;    }
 .png3_2{float: left;    }
 .png3_3{    position: absolute;

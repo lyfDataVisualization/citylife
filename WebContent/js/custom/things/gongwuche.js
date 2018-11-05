@@ -3,11 +3,13 @@
  */
 var positionDataSet= [];
 var maxTime = 0;
-function addGongwucheLayer()
+function addtrailLayer(dataSet)
 {
 	var dataSource = new Cesium.CustomDataSource('myAnimation');
-	
+	viewer.dataSources.add(dataSource);
 	var colors = [
+		 new Cesium.Color(112/ 255, 65/ 255, 43/ 255, 1),//单车
+	        new Cesium.Color(24/ 255, 72/ 255, 117/ 255, 1),//公务车
         new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1),
         new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 1),
         new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 1),
@@ -15,6 +17,15 @@ function addGongwucheLayer()
         new Cesium.Color(25 / 255, 20 / 255, 38 / 255, 1),
         new Cesium.Color(221 / 255, 20 / 255, 20 / 255, 1)
     ];
+	var color;
+	if(dataSet == '../data/06.csv')
+	{
+		color = colors[0];
+	}
+	else
+	{
+		color = color = colors[1];
+	}
 	/*
 	for (var i = 0, len = 1; i < len; i++) {
         var startPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
@@ -40,7 +51,8 @@ function addGongwucheLayer()
     }
 	*/
 	$.ajax({
-		  url: '../data/04.csv',
+//		  url: '../data/04.csv',
+		  url: dataSet,
 		  dataType: 'text',
 		}).done(AftersuccessFunction);
 	function AftersuccessFunction(data) {
@@ -79,9 +91,10 @@ function addGongwucheLayer()
 	                material: new Cesium.PolylineAttackLinkMaterialProperty({
 	                //material: new Cesium.PolylineArrowLinkMaterialProperty({
 	                    //color: new Cesium.Color(213 / 255, 248/ 255, 255 / 255, 1),
-	                    color: colors[singleRow%6],
+//	                    color: colors[singleRow%6],
+	                	color: color,
 	                    //duration:2000
-	                    duration:durationTime*50
+	                    duration:durationTime*20
 	                }),
 //	                material: new Cesium.PolylineDashMaterialProperty({
 //	                    color: colors[i % 3]
@@ -91,7 +104,7 @@ function addGongwucheLayer()
 		    
 		  }
 		  
-		  viewer.dataSources.add(dataSource);
+//		  viewer.dataSources.add(dataSource);
 	}
 //	viewer.dataSources.add(dataSource);
 }

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+.login{
+	width:1920px;
+	height:1080px;
+	background: url(../img/login/pc-0.jpg) no-repeat center center;
+
+}
+.userInfobox{
+	    position: absolute;
+    right: 500px;
+    top: 470px;
+        width: 330px;
+}
+.userNameLabel{
+	width: 40px;
+	background: url(../img/login/pc-0_03.png) no-repeat center center;
+    height: 40px;
+    float: left;
+}
+.inputPasswordLabel{
+	    width: 40px;
+	    background: url(../img/login/pc-0_06.png) no-repeat center center;
+    height: 40px;
+    float: left;
+}
+.userName_div{
+    width: 300px;
+   height: 40px;
+    float: left;
+}
+.inputPassword_div{
+width: 300px;
+   height: 40px;
+    float: left;
+}
+#userName{
+    background-color: rgba(0,0,0,.0001);
+        border: 1px solid #54a5ff;
+        color: white;
+}
+#inputPassword{
+background-color: rgba(0,0,0,.0001);
+    border: 1px solid #54a5ff;
+    color: white;
+}
+.logincancel{
+    position: absolute;
+    left: 0px;
+    width: 164px;
+    height: 39px;
+        border-color: rgba(0,0,0,0);
+    background: url(../img/login/pc-0_09.png) no-repeat center center;
+
+}
+.logincancel:hover{
+    background-color: rgba(0,0,0,0)!important;
+    border-color: rgba(0,0,0,0);
+    
+}
+#logincancel.active{
+    background-color: rgba(0,0,0,0)!important;
+    border-color: rgba(0,0,0,0);
+    
+}
+.logingo{
+    position: absolute;
+    right: 0px;
+    width: 164px;
+    height: 39px;
+     border-color: rgba(0,0,0,0);
+    background: url(../img/login/pc-0_11.png) no-repeat center center;
+}
+.logingo:hover{
+    background-color: rgba(0,0,0,0)!important;
+    border-color: rgba(0,0,0,0);
+    
+}
+#logingo.active{
+    background-color: rgba(0,0,0,0)!important;
+    border-color: rgba(0,0,0,0);
+    
+}
