@@ -85,6 +85,7 @@ function showLayersPanel()
 	$('#showM').show();
 }
 function loadData(index){
+//	$('.menuitem_cus_li').removeClass('active');
 	
 //	$(".ttt > span").removeClass('turnRed');
 //	$(testdiv).children("span").eq(0).addClass('turnRed');
@@ -104,10 +105,10 @@ function loadData(index){
 //	}
 	if(index==0)
 	{
-		$("#person_legend").show(2000);
+		$("#person_legend").show(4000);
 		$("#middlepanel_1_0").html("<img src='../v5/img/person/pc-2-2_06.png' class='' alt=''>");
-		$("#person_infopanel_right").show(2000);
-		$("#person_infopanel_left").show(2000);
+		$("#person_infopanel_right").show(4000);
+		$("#person_infopanel_left").show(4000);
 		//		console.log(dataHtml["person"]);
 //		B_map = false;
 		resetView(B_map);
@@ -115,6 +116,8 @@ function loadData(index){
 //		rotateMap();
 	    var promise = Cesium.GeoJsonDataSource.load('../data/person_polygon.geojson');
 	    promise.then(function(dataSource) {
+	    	
+	    	$('.menuitem_cus_li').removeClass('active');
 	    	
 	        viewer.dataSources.add(dataSource);
 	        //console.log(dataSource.entities);
@@ -264,10 +267,10 @@ function loadData(index){
 	else if(index==1)
 	{
 		$("#middlepanel_1_0").html("<img src='../v5/img/company/pc-2-3_03.png' class='' alt=''>");
-		$("#company_infopanel_right").show();
-		$("#company_infopanel_left").show();
+		$("#company_infopanel_right").show(6000);
+		$("#company_infopanel_left").show(6000);
 		
-		$("#company_legend").show();
+		$("#company_legend").show(6000);
 		
 //		$("#middlepanel_1").html(dataHtml["company"]);
 //		B_map = false;
@@ -281,16 +284,27 @@ function loadData(index){
 //			markerSymbol:"../data/marker-11.svg"
 		});
 		viewer.dataSources.add(dataSource);*/
+		var colors = [
+			 
+	        new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1),
+	        //new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 1),
+	        //new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 1),
+	        new Cesium.Color(60 / 255, 39/ 255, 255 / 255, 1)
+	        //new Cesium.Color(25 / 255, 20 / 255, 38 / 255, 1),
+	        //new Cesium.Color(221 / 255, 20 / 255, 20 / 255, 1)
+	    ];
 		var cusdataSource = new Cesium.CustomDataSource('mycompany');
 		var promise = Cesium.GeoJsonDataSource.load('../data/company.geojson');
 		promise.then(function(dataSource) {
+			$('.menuitem_cus_li').removeClass('active');
 //	        viewer.dataSources.add(dataSource);
+			viewer.dataSources.add(cusdataSource);
 	        //console.log(dataSource.entities);
 	        //Get the array of entities
 	        var entities = dataSource.entities.values;
 			//console.log(entities);
 	        var colorHash = {};
-	        for (var i = 0; i < entities.length; i++) {
+	        for (var i = 0; i < entities.length; i+=3) {
 	            //For each entity, create a random color based on the state name.
 	            //Some states have multiple entities, so we store the color in a
 	            //hash so that we use the same color for the entire state.
@@ -326,6 +340,7 @@ function loadData(index){
 	            */
 	            var x = entity.properties.DISPLAY_X;
 	            var y = entity.properties.DISPLAY_Y;
+	            /*
 	            var type = entity.properties.TYPE;
 	            var point_color;
 	            if(type=='A980'){
@@ -347,20 +362,22 @@ function loadData(index){
 	            {
 	            	point_color = Cesium.Color.fromBytes(71, 39, 43);
 	            }
+	            */
 	            cusdataSource.entities.add({
 	                
 	                
 	                position: Cesium.Cartesian3.fromDegrees(x, y),
 	                point:{
 //	                	color : Cesium.Color.fromBytes(198, 135, 138,200),
-	                	color : point_color,
+//	                	color : point_color,
+	                	color : colors[i%2],
 	                	pixelSize : 3
 	                }
 	                
 	            });
-	          
+	            
 	        }
-	        viewer.dataSources.add(cusdataSource);
+//	        viewer.dataSources.add(cusdataSource);
 	    }).otherwise(function(error){
 	       
 	        window.alert(error);
@@ -368,16 +385,19 @@ function loadData(index){
 	}
 	else if(index==2)
 	{	
-		$("#sharebikes_legend").show(2000);
+		$("#sharebikes_legend").show(4000);
 		$("#middlepanel_1_0").html("<img src='../v5/img/sharebikes/pc-2-4_06.png' class='' alt=''>");
-		$("#sharebikes_infopanel_right").show(2000);
-		$("#sharebikes_infopanel_left").show(2000);
+		$("#sharebikes_infopanel_right").show(4000);
+		$("#sharebikes_infopanel_left").show(4000);
 		resetView(B_map);
-		addtrailLayer('../data/06.csv');
+//		addtrailLayer('../data/06.csv');
 //		adjustCss(index);
-		/*
+		
 		var promise = Cesium.GeoJsonDataSource.load('../data/beijing_1km_pop-2.geojson');
 	    promise.then(function(dataSource) {
+	    	
+	    	$('.menuitem_cus_li').removeClass('active');
+	    	
 	        viewer.dataSources.add(dataSource);
 	        //console.log(dataSource.entities);
 	        //Get the array of entities
@@ -427,15 +447,15 @@ function loadData(index){
 	        //Display any errrors encountered while loading.
 	        window.alert(error);
 	    });
-	    */
+	    
 
 		
 	}
 	else if(index==3){//index==3
-		$("#gongwuche_legend").show(2000);
+		$("#gongwuche_legend").show(4000);
 		$("#middlepanel_1_0").html("<img src='../v5/img/gongwuche/pc-2-5_03.png' class='' alt=''>");
-		$("#gongwuche_infopanel_right").show(2000);
-		$("#gongwuche_infopanel_left").show(2000);
+		$("#gongwuche_infopanel_right").show(4000);
+		$("#gongwuche_infopanel_left").show(4000);
 		
 		
 //		$("#middlepanel_1_1").html("<img src='../img/page2/p4.png' class='' alt=''>");
@@ -532,10 +552,10 @@ function loadData(index){
 //		initGongwucheMaop(E_charts);
 	}
 	else{//index == 4 //职住态势
-		$("#zhizhu_legend").show(2000);
+		$("#zhizhu_legend").show(4000);
 		$("#middlepanel_1_0").html("<img src='../v5/img/zhizhu/pc-2-1_06.png' class='' alt=''>");
-		$("#zhizhu_infopanel_right").show(2000);
-		$("#zhizhu_infopanel_left").show(2000);
+		$("#zhizhu_infopanel_right").show(4000);
+		$("#zhizhu_infopanel_left").show(4000);
 		
 		resetView(B_map);
 		
@@ -564,7 +584,7 @@ function loadData(index){
 		var data = [];
 		var promise = Cesium.GeoJsonDataSource.load('../data/person_polygon.geojson');
 	    promise.then(function(dataSource) {
-	    	
+	    	$('.menuitem_cus_li').removeClass('active');
 	        var entities = dataSource.entities.values;
 			
 	        for (var i = 0; i < entities.length; i++) {
@@ -623,6 +643,8 @@ var initPanel2Frist = true;
 var viewer_panel2;
 var preSelectedEntity_panel2 = null;
 var preSelectedEntity_img_panel2 = null;
+
+var newBillboardEntityPanel2 = null;
 function initPanel2()
 {
 	$('#assist_panel').hide();
@@ -660,6 +682,19 @@ function initPanel2()
 	        var pick = viewer_panel2.scene.pick(click.position);
 	        //选中某模型   pick选中的对象
 	        if(pick && pick.id){
+	        	var pick1= new Cesium.Cartesian2(click.position.x,click.position.y);
+	            var cartesian = viewer_panel2.scene.globe.pick(viewer_panel2.camera.getPickRay(pick1),viewer_panel2.scene);
+	            var ellipsoid=viewer_panel2.scene.globe.ellipsoid;
+	            var cartographic=ellipsoid.cartesianToCartographic(cartesian);
+	            var lat=Cesium.Math.toDegrees(cartographic.latitude);
+
+	            var lng=Cesium.Math.toDegrees(cartographic.longitude);
+	            
+//	            console.log(lat+','+lng);
+	            
+	        	viewer_panel2.camera.flyTo({
+	        	    destination : Cesium.Cartesian3.fromDegrees(lng, lat,2000.0)
+	        	});
 	        	//console.log(pick.id);
 //	        	$('.assist_panel_group4').toggle();
 	        	var selectedEntity = pick.id;
@@ -668,18 +703,33 @@ function initPanel2()
 	        	{
 	        		preSelectedEntity_panel2.billboard.image = preSelectedEntity_img_panel2;
 	        	}
-	        	
 	        	preSelectedEntity_panel2 = selectedEntity;
 	        	preSelectedEntity_img_panel2 = selectedEntity.billboard.image
 	        	
 	        	selectedEntity.billboard.image = '/citylife/v5/img/jishui/4.png';
-	        	
-	        	$('.panel2_info').css({'top':(click.position.y-325)+'px','left':(click.position.x+10)+'px'});
-	        	$('.panel2_info').toggle();
+	        	/*****************************/
+	        	if(newBillboardEntityPanel2)
+	        	{
+	        		viewer_panel2.dataSources.get(0).entities.remove(newBillboardEntityPanel2);
+	        	}
+	        	newBillboardEntityPanel2 = new Cesium.Entity({
+	            	position : Cesium.Cartesian3.fromDegrees(lng, lat),
+		            billboard : {
+		                //position : Cesium.Cartesian3.fromDegrees(rowCells[1], rowCells[2]),
+//		                scaleByDistance : new Cesium.NearFarScalar(1.5e2, 5.0, 1.5e7, 0.5),
+		                image : '../v5/img/jishui/pc-4_14.png',
+		                pixelOffset : new Cesium.Cartesian2(170, 160),
+		            }
+	            });
+	        	viewer_panel2.dataSources.get(0).entities.add(newBillboardEntityPanel2);
+	            
+//	        	$('.panel2_info').css({'top':(click.position.y-325)+'px','left':(click.position.x+10)+'px'});
+//	        	$('.panel2_info').toggle();
 	        }
 
 	     }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 	  //设置鼠标滚动事件的处理函数，这里负责监听高度值变化
+	    /*
         handler.setInputAction(function(wheelment) {
             height = Math.ceil(viewer_panel2.camera.positionCartographic.height);
 //            console.log(height);
@@ -694,6 +744,7 @@ function initPanel2()
             	$('#jishui_infopanel_right_1').show();
             }
         }, Cesium.ScreenSpaceEventType.WHEEL);
+        */
         //防止穿透
         var removeChanged = viewer_panel2.camera.changed.addEventListener(function(percentage) {
             if(viewer_panel2.camera.pitch<=0.1&&viewer_panel2.camera.pitch>=-0.1)
@@ -702,6 +753,26 @@ function initPanel2()
         		    destination : Cesium.Cartesian3.fromDegrees(116.413, 39.913,55000.0)
         		});
             }
+            height = Math.ceil(viewer_panel2.camera.positionCartographic.height);
+//          console.log(height);
+	          if(height<=3000)
+	          {
+	          	$('.info_panel2').hide();
+	          	if($('#jishui_infopanel_right_2').is(':hidden'))
+          		{
+	          		$('#jishui_infopanel_right_2').show(2000);
+          		}
+	          	else{
+	          		$('#jishui_infopanel_right_2').show();
+	          	}
+	          		
+	          	
+	          }
+	          else{
+	          	$('.info_panel2').hide();
+	          	$('#jishui_infopanel_right_1').show();
+	          			
+	          }
         });
 	    
 	    loadLayer2Panel2();

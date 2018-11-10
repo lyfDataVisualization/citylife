@@ -9,7 +9,7 @@ function addtrailLayer(dataSet)
 	viewer.dataSources.add(dataSource);
 	var colors = [
 		 new Cesium.Color(112/ 255, 65/ 255, 43/ 255, 1),//单车
-	        new Cesium.Color(24/ 255, 72/ 255, 117/ 255, 1),//公务车
+	        new Cesium.Color(60 / 255, 39/ 255, 255 / 255, 1),//公务车
         new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1),
         new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 1),
         new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 1),
@@ -56,6 +56,9 @@ function addtrailLayer(dataSet)
 		  dataType: 'text',
 		}).done(AftersuccessFunction);
 	function AftersuccessFunction(data) {
+		
+		$('.menuitem_cus_li').removeClass('active');
+		
 		var allRows = data.split(/\r?\n|\r/);
 //		  var max = 0;
 		  //var table = '<table>';

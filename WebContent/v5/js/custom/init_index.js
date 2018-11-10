@@ -12,6 +12,7 @@ function initPage()
         imageryProvider: new Cesium.UrlTemplateImageryProvider({
             url : 'http://223.223.200.50:9300/styles/chinablue/{z}/{x}/{y}@2x.png',
             credit : '© Analytical Graphics, Inc.'
+//            minimumLevel:7
 //            tilingScheme : new Cesium.GeographicTilingScheme(),
 //            maximumLevel : 5
         }),
@@ -155,6 +156,7 @@ function LoadData()
 var showCityLifePanelFirst = true;
 var viewer_two;
 var preSelectedEntity = null;
+var newBillboardEntity = null;
 function showCityLifePanel()
 {
 //	alert('oooook');
@@ -217,13 +219,30 @@ function showCityLifePanel()
 	        	{
 	        		preSelectedEntity.billboard.image = '/citylife/v5/img/citylife/p.png';
 	        	}
+	        	if(newBillboardEntity)
+	        	{
+	        		viewer_two.dataSources.get(0).entities.remove(newBillboardEntity);
+	        	}
 	        	
+	        	var pick1= new Cesium.Cartesian2(click.position.x,click.position.y);
+	            var cartesian = viewer_two.scene.globe.pick(viewer_two.camera.getPickRay(pick1),viewer_two.scene);
+	            newBillboardEntity = new Cesium.Entity({
+	            	position : cartesian,
+		            billboard : {
+		                //position : Cesium.Cartesian3.fromDegrees(rowCells[1], rowCells[2]),
+//		                scaleByDistance : new Cesium.NearFarScalar(1.5e2, 5.0, 1.5e7, 0.5),
+		                image : '../v5/img/citylife/tck.png',
+		                pixelOffset : new Cesium.Cartesian2(100, 20),
+		            }
+	            });
+	            viewer_two.dataSources.get(0).entities.add(newBillboardEntity);
+	            
 	        	preSelectedEntity = selectedEntity;
 	        	
 	        	selectedEntity.billboard.image = '/citylife/v5/img/citylife/p1.png';
 	        	
-	        	$('.assist_panel_group4').css({'top':click.position.y+'px','left':(click.position.x+10)+'px'});
-	        	$('.assist_panel_group4').toggle();
+//	        	$('.assist_panel_group4').css({'top':click.position.y+'px','left':(click.position.x+10)+'px'});
+//	        	$('.assist_panel_group4').toggle();
 	        }
 
 	     }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
@@ -265,7 +284,7 @@ function LoadMarketData()
 				    dataSource.entities.add({
 			            position : Cesium.Cartesian3.fromDegrees(rowCells[1], rowCells[2]),
 			            billboard : {
-			                position : Cesium.Cartesian3.fromDegrees(rowCells[1], rowCells[2]),
+			                //position : Cesium.Cartesian3.fromDegrees(rowCells[1], rowCells[2]),
 //			                scaleByDistance : new Cesium.NearFarScalar(1.5e2, 5.0, 1.5e7, 0.5),
 			                image : image
 			            },

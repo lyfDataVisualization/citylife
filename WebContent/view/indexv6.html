@@ -35,56 +35,114 @@
 	          		<img src="../v5/img/head/logo.png" class="" alt="">
 	          	</div-->
 	          	<ul id="myTab" class="nav nav-pills" style="margin-top:15px;">
-					<li class="active" id="myTab1" value="0" onclick="hideCityLifePanel()"><a href="#panel0" data-toggle="pill" ></a></li>
+					<!-- li class="dropdown active" id="myTab1" value="0"><a href="#panel0" data-toggle="dropdown" ></a>
+						<ul class="dropdown-menu wu_menu" role="menu"  style="background-color: #0d2d5c;" aria-labelledby="dropdownMenu0">
+							<li role="presentation">
+								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#">动态人口分布</a>
+							</li>
+						</ul>
+					</li-->
+					<!-- li class="dropdown active" id="myTab1" value="0" onclick="hideCityLifePanel()"><a href="#panel0" data-toggle="pill" ></a></li-->
+					<li  class="dropdown active" id="myTab1" value="0"><a href="#"  id="myTab1_a" data-toggle="dropdown" ></a>
+						<ul class="dropdown-menu wu_menu" role="menu"  style="background-color: #0d2d5c;" aria-labelledby="dropdownMenu0">
+							<li role="presentation" onclick="hideCityLifePanel()">
+								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel0">今日要事</a>
+							</li>
+							<li role="presentation" onclick="showCityLifePanel()">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">城市生活线监测</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">城市生命线监测</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">城市事件线监测</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">城市舆情线监测</a>
+							</li>
+						</ul>
+					</li>
 					<!---li onclick="showLayersPanel();" id="myTab2" value="1"><a href="#panel1"  id="myTab2_a" data-toggle="pill" ></a></li-->
 					<li  class="dropdown" id="myTab2" value="1"><a href="#"  id="myTab2_a" data-toggle="dropdown" ></a>
 						<ul class="dropdown-menu wu_menu" role="menu"  style="background-color: #0d2d5c;" aria-labelledby="dropdownMenu1">
-							<li role="presentation" class="dropdown-header dropdown-header_cus">人</li>
+							<!-- li role="presentation" class="dropdown-header dropdown-header_cus">人</li-->
+							<li class="dropdown-submenu dropdown-header dropdown-header_cus">
+								<a class="dropdown-submenu_a" tabindex="-1" href="#">人</a>
+								<ul class="dropdown-menu" role="menu">
+								  	<li class="menuitem_cus_li" role="presentation" onclick="loadData(0)">
+										<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">动态人口分布</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">人口聚集态势</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">
+											人口通勤态势
+										</a>
+									</li>
+									<li class="menuitem_cus_li" role="presentation" onclick="loadData(4)">
+										<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">北京职住态势</a>
+									</li>
+								</ul>
+							</li>
 							
-							<li role="presentation" onclick="loadData(0)">
-								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">动态人口分布</a>
+							<li class="dropdown-submenu dropdown-header dropdown-header_cus">
+								<a class="dropdown-submenu_a" tabindex="-1" href="#">法人</a>
+								<ul class="dropdown-menu">
+								  	<li class="menuitem_cus_li" role="presentation" onclick="loadData(1)">
+										<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">高新技术企业布局</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">服务业务布局</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">金融业务布局</a>
+									</li>
+								</ul>
 							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">人口聚集态势</a>
+							<li class="dropdown-submenu dropdown-header dropdown-header_cus">
+								<a class="dropdown-submenu_a" tabindex="-1" href="#">物</a>
+								<ul class="dropdown-menu">
+								  	<li class="menuitem_cus_li" role="presentation" onclick="loadData(2)">
+										<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">共享单车分布</a>
+									</li>
+									<li class="menuitem_cus_li" role="presentation" onclick="loadData(3)">
+										<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">公务用车监控</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">空气质量监测</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">智能垃圾桶</a>
+									</li>
+								</ul>
 							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">
-									人口通勤态势
-								</a>
-							</li>
-							<li role="presentation" onclick="loadData(4)">
-								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">北京职住态势</a>
-							</li>
-							
 							<!-- li role="presentation" class="divider"></li-->
-							<li role="presentation" class="dropdown-header dropdown-header_cus">法人</li>
-							<li role="presentation" onclick="loadData(1)">
-								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">高新技术企业布局</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">服务业务布局</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">金融业务布局</a>
-							</li>
-							<li role="presentation" class="dropdown-header dropdown-header_cus">物</li>
-							<li role="presentation" onclick="loadData(2)">
-								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">共享单车分布</a>
-							</li>
-							<li role="presentation" onclick="loadData(3)">
-								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel1">公务用车监控</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">空气质量监测</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">智能垃圾桶</a>
-							</li>
+							
 							
 						</ul>
 					</li>
 					<li></li>
-					<li id="myTab3" value="2" onclick="initPanel2()"><a href="#panel2" data-toggle="pill" ></a></li>
+					<!--li id="myTab3" value="2" onclick="initPanel2()"><a href="#panel2" data-toggle="pill" ></a></li-->
+					<li  class="dropdown" id="myTab3" value="2"><a href="#"  id="myTab3_a" data-toggle="dropdown" ></a>
+						<ul class="dropdown-menu wu_menu" role="menu"  style="background-color: #0d2d5c;" aria-labelledby="dropdownMenu0">
+							<li role="presentation" onclick="initPanel2()">
+								<a data-toggle="tab" role="menuitem" class="menuitem_cus" tabindex="-1" href="#panel2">城市积水分析</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">大型活动安防</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">交通拥堵分析</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">市政设施建设工作</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="menuitem_cus" tabindex="-1" href="#">城市雾霾处理</a>
+							</li>
+						</ul>
+					</li>
 					<li id="myTab4" value="3"><a href="#panel3" data-toggle="pill" ></a>
 						
 					</li>
